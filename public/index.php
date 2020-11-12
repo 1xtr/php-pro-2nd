@@ -9,4 +9,4 @@ spl_autoload_register([new Autoloader(), 'loadClass']);
 
 $a = new Product();
 
-var_dump($a);
+//var_dump($a);
