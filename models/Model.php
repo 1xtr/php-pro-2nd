@@ -17,7 +17,7 @@ abstract class Model implements ModelInterface
         $this->tableName = $this->getTableName();
     }
 
-    public function getById(int $id)
+    public function getById(int $id): ModelInterface
     {
         $sql = "SELECT * FROM {$this->tableName} WHERE id = :id";
         return $this->db->queryObject($sql, get_called_class(), [':id' => $id])[0];

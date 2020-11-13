@@ -8,9 +8,14 @@ class Orders extends Model
 {
     protected int $id;
     protected int $user_id;
-    protected $date;
+    protected  $date;
     protected int $status_id;
-    protected int $totalAmount;
+    protected int $order_amount;
+
+    public function create(int $user_id)
+    {
+
+    }
 
     public function getTableName(): string
     {

@@ -35,9 +35,14 @@ class Db
         return $pdoStatement;
     }
 
+    public function getLastId(): int
+    {
+        return $this->getConnection()->lastInsertId();
+    }
+
     public function queryAll(string $sql, array $params = [])
     {
-        return $this->query($sql,$params)->fetchAll();
+        return $this->query($sql, $params)->fetchAll();
     }
 
     public function queryObject(string $sql, string $className = null, array $params = [])
@@ -53,7 +58,7 @@ class Db
 
     public function execute(string $sql, array $params = [])
     {
-        return $this->query($sql,$params)->rowCount();
+        return $this->query($sql, $params)->rowCount();
     }
 
     private function buildConnectionString()
