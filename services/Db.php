@@ -48,7 +48,13 @@ class Db
     public function queryObject(string $sql, string $className = null, array $params = [])
     {
         $pdoStatement = $this->query($sql, $params);
-        return $pdoStatement->fetchAll(\PDO::FETCH_CLASS, $className);
+        if (isset($className)) {
+            $pdoStatement->setFetchMode(
+                \PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE,
+                $className
+            );
+        }
+        return $pdoStatement->fetchAll();
     }
 
     public function queryOne(string $sql, array $params = [])

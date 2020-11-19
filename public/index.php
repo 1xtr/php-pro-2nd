@@ -9,8 +9,8 @@ spl_autoload_register([new Autoloader(), 'loadClass']);
 
 //$products = (new Product())->getAll();
 //$product = (new Product())->getById(4);
-
-//var_dump($products);
+//
+//var_dump($product);
 
 //$user = (new \app\models\User())->getById(1);
 //var_dump($user);
