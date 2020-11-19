@@ -4,7 +4,7 @@
 namespace app\models;
 
 
-class Orders extends Model
+class Orders extends Record
 {
     protected int $id;
     protected int $user_id;

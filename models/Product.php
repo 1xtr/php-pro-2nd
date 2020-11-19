@@ -4,7 +4,7 @@
 namespace app\models;
 
 
-class Product extends Model
+class Product extends Record
 {
     protected int $id;
     protected string $name;
@@ -15,7 +15,7 @@ class Product extends Model
     protected int $views_count;
     protected int $quantity;
 
-    public function getTableName(): string
+    public static function getTableName(): string
     {
         return 'products';
     }
@@ -24,7 +24,7 @@ class Product extends Model
     {
         $sql = "INSERT INTO {$this->tableName}
             VALUES (DEFAULT, :name, :full_desc, :price, DEFAULT, DEFAULT, DEFAULT, :quantity)";
-        //var_dump($sql);
+
         $this->db->execute($sql, [
             ':name' => $this->name,
             ':full_desc' => $this->full_desc,

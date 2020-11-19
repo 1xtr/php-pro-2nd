@@ -26,3 +26,14 @@ spl_autoload_register([new Autoloader(), 'loadClass']);
 //$session = \app\models\Session::getInstance();
 //$session::addField('test2', 'test2');
 //var_dump($_SESSION);
+
+$controllerName = $_GET['c'] ?: 'product';
+$actionName = $_GET['a'];
+
+$controllerClass = "app\controllers\\" . ucfirst($controllerName) . "Controller";
+
+if(class_exists($controllerClass)) {
+    /** @var \app\controllers\ProductController $controller */
+    $controller = new $controllerClass;
+    $controller->runAction($actionName);
+}

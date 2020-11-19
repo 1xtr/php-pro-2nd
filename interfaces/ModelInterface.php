@@ -6,10 +6,10 @@ namespace app\interfaces;
 
 interface ModelInterface
 {
-    public function getById(int $id): ModelInterface;
+    static function getById(int $id): ModelInterface;
 
-    public function getAll();
+    static function getAll();
 
-    public function getTableName(): string;
+    static function getTableName(): string;
 
 }

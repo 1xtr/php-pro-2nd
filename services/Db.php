@@ -40,12 +40,7 @@ class Db
         return $this->getConnection()->lastInsertId();
     }
 
-    public function queryAll(string $sql, array $params = [])
-    {
-        return $this->query($sql, $params)->fetchAll();
-    }
-
-    public function queryObject(string $sql, string $className = null, array $params = [])
+    public function queryAll(string $sql, array $params = [], string $className = null)
     {
         $pdoStatement = $this->query($sql, $params);
         if (isset($className)) {
@@ -57,9 +52,9 @@ class Db
         return $pdoStatement->fetchAll();
     }
 
-    public function queryOne(string $sql, array $params = [])
+    public function queryOne(string $sql, array $params = [], string $className = null)
     {
-        return $this->queryAll($sql, $params)[0];
+        return $this->queryAll($sql, $className, $params)[0];
     }
 
     public function execute(string $sql, array $params = [])
