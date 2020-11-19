@@ -29,5 +29,11 @@ abstract class Model implements ModelInterface
         return $this->db->queryObject($sql, get_called_class());
     }
 
+    public function deleteByID(int $id)
+    {
+        $sql = "DELETE FROM {$this->tableName} WHERE id = :id";
+        return $this->db->execute($sql, [':id' => $id]);
+    }
+
     abstract public function getTableName(): string;
 }

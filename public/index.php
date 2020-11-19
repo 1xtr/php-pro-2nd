@@ -16,10 +16,13 @@ spl_autoload_register([new Autoloader(), 'loadClass']);
 //var_dump($user);
 
 
-$product = new Product();
-$product->setName("test prod");
-$product->setFullDesc("blahblahblah");
-$product->setPrice(100500);
-$product->setQuantity(44);
-var_dump($product->create());
+//$product = new Product();
+//$product->setName("test prod");
+//$product->setFullDesc("blah");
+//$product->setPrice(100500);
+//$product->setQuantity(44);
+//var_dump($product->create());
 //var_dump($product);
+//$session = \app\models\Session::getInstance();
+//$session::addField('test2', 'test2');
+//var_dump($_SESSION);

@@ -34,13 +34,6 @@ class Product extends Model
         return $this->db->getLastId();
     }
 
-//    public function create(string $name, $price, int $image_id, string $full_desc, int $section_id, int $qtt)
-//    {
-//        $sql = "INSERT INTO {$this->tableName}
-//            VALUES (DEFAULT, '$name', '$full_desc', '$price', '$image_id', '$section_id', DEFAULT, '$qtt')";
-//        $this->db->execute($sql);
-//        return $this->db->lastInsertId();
-//    }
 
     /**
      * @return \app\traits\SingletonTrait|object|null

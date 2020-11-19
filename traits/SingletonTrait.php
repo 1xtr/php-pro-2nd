@@ -19,11 +19,11 @@ trait SingletonTrait
         return static::$instance;
     }
 
-    public function __construct() {}
+    protected function __construct() {}
 
-    public function __wakeup() {}
+    protected function __wakeup() {}
 
-    public function __clone() {}
+    protected function __clone() {}
 
 
 }
